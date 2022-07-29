@@ -1,0 +1,43 @@
+{% extends 'main/base.html' %}
+{% block title %}
+    Index page
+{% endblock %}
+
+{% block body %}
+
+{% load static %}
+    <div class="card" style="width: 18rem;">
+      <img src="{% static 'main/bayern.jpg' %}" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Index page</h5>
+        <a href="{% url 'main:profile'%}" class="btn btn-primary">Go</a>
+      </div>
+    </div>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">name</th>
+      <th scope="col">price</th>
+      <th scope="col">rating</th>
+      <th scope="col">description</th>
+    </tr>
+  </thead>
+  <tbody>
+
+  {% if products %}
+    {% for item in products %}
+        <tr>
+          <th scope="row">{{ item.name }}</th>
+          <td>{{ item.price }}</td>
+          <td>{{ item.rating }}</td>
+          <td>{{ item.description }}</td>
+        </tr>
+    {% endfor %}
+  {% else %}
+
+  {% endif %}
+
+  </tbody>
+</table>
+{% endblock %}
