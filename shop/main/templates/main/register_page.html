@@ -1,0 +1,29 @@
+{% extends 'main/base.html' %}
+
+{% block title %}
+Страница регистрации
+{% endblock %}
+
+{% block body %}
+<form action="{% url 'main:register' %}" method="post">
+
+    {% csrf_token %}
+
+    <input type="text" name="username" placeholder="Имя пользователя">
+    <br>
+    <br>
+    <input type="password" name="password" placeholder="Пароль пользователя">
+    <br>
+    <br>
+    <input type="text" name="first_name" placeholder="Имя">
+    <br>
+    <br>
+    <input type="text" name="last_name" placeholder="Фамилия пользователя">
+    <br>
+    <br>
+    <input type="text" name="email" placeholder="Почта">
+    <br>
+    <br>
+    <input type="submit" value="Зарегестрироваться">
+</form>
+{% endblock %}

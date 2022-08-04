@@ -4,13 +4,8 @@
 {% endblock %}
 
 {% block body %}
-
-{% load static %}
-    <div class="card" style="width: 18rem;">
-      <img src="{% static 'main/bayern.jpg' %}" class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title">Profile page</h5>
-        <a href="{% url 'main:index' %}" class="btn btn-primary">Go</a>
-      </div>
-    </div>
+<h2>{{ request.user.username }}</h2>
+<h2>{{ request.user.email }}</h2>
+<h2>{{ request.user.first_name }}</h2>
+<h2>{{ request.user.last_name }}</h2>
 {% endblock %}

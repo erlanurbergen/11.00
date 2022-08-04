@@ -1,0 +1,18 @@
+{% extends 'main/base.html' %}
+{% block title %}
+    Delete page
+{% endblock %}
+
+{% block body %}
+
+{% load static %}
+
+<h1>Вы хотите удалить продукт? {{product}}</h1>
+<form action="{% url 'main:delete_products' product.id %}" method="post">
+
+    {% csrf_token %}
+    <a href="{% url 'main:index' %}">Отмена</a>
+
+    <input type="submit" value="Удалить">
+</form>
+{% endblock %}
